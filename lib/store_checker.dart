@@ -6,7 +6,8 @@ import 'package:flutter/services.dart';
 enum Source {
   IS_INSTALLED_FROM_PLAY_STORE,
   IS_INSTALLED_FROM_LOCAL_SOURCE,
-  IS_INSTALLED_FROM_OTHER_STORE,
+  IS_INSTALLED_FROM_AMAZON_APP_STORE,
+  IS_INSTALLED_FROM_OTHER_SOURCE,
   IS_INSTALLED_FROM_APP_STORE,
   IS_INSTALLED_FROM_TEST_FLIGHT,
   UNKNOWN
@@ -25,9 +26,12 @@ class StoreChecker {
       } else if (sourceName.compareTo('com.android.vending') == 0) {
         // Installed apk from Google Play Store
         return Source.IS_INSTALLED_FROM_PLAY_STORE;
+      } else if(sourceName.compareTo('com.amazon.venezia') == 0){
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_AMAZON_APP_STORE;
       } else {
         // Installed apk from Amazon app store or other markets
-        return Source.IS_INSTALLED_FROM_OTHER_STORE;
+        return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
       }
     } else if (Platform.isIOS) {
       if (sourceName.isEmpty) {

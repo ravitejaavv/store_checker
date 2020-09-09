@@ -2,7 +2,9 @@ import Flutter
 import UIKit
 import Foundation
 
+/** StoreCheckerPlugin */
 public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
+    // Register ios method channel to flutter plugin
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "store_checker", binaryMessenger: registrar.messenger())
         let instance = SwiftStoreCheckerPlugin()
@@ -14,10 +16,13 @@ public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
         let isTestFlight = isRunningInTestFlightEnvironment();
         let isAppStore = isAppStoreReceiptSandbox();
         if isTestFlight{
+            // Installed from Test Flight
             result("TestFlight")
         }else if isAppStore{
+            // Installed from App Store
             result("AppStore")
         }else{
+            //Result is unknown
             result("")
         }
     }
@@ -72,6 +77,7 @@ public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
     
     // Check current app is running on simulator or not
     private func isSimulator() -> Bool {
+        //Check architecture
         #if arch(i386) || arch(x86_64)
         return true
         #else

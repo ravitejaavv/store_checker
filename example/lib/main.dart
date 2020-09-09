@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
     Source installationSource;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
+      //get origin of installed application
       installationSource = await StoreChecker.getSource;
     } on PlatformException {
       installationSource = Source.UNKNOWN;
@@ -37,25 +38,36 @@ class _MyAppState extends State<MyApp> {
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
+    // Set source text state
     setState(() {
       switch(installationSource){
         case Source.IS_INSTALLED_FROM_PLAY_STORE:
+          // Installed from Play Store
           source = "Play Store";
           break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
-          source = "Local source";
+        // Installed using adb commands or side loading or any cloud service
+          source = "Local Source";
           break;
-        case Source.IS_INSTALLED_FROM_OTHER_STORE:
-          source = "Other store";
+        case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:
+          // Installed from Amazon app store
+          source = "Amazon Store";
+          break;
+        case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
+          // Installed from other market store
+          source = "Other Source";
           break;
         case Source.IS_INSTALLED_FROM_APP_STORE:
+          // Installed from app store
           source = "App Store";
           break;
         case Source.IS_INSTALLED_FROM_TEST_FLIGHT:
+          // Installed from Test Flight
           source = "Test Flight";
           break;
         case Source.UNKNOWN:
-          source = "Unknown source";
+          // Installed from Unknown source
+          source = "Unknown Source";
           break;
       }
     });
