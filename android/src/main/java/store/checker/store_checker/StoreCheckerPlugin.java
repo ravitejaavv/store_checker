@@ -43,6 +43,7 @@ public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(new StoreCheckerPlugin());
   }
 
+  //This function is used to get the installer package name of current application
   @TargetApi(Build.VERSION_CODES.ECLAIR)
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
