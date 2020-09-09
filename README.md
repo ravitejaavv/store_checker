@@ -20,22 +20,32 @@ Source installationSource = await StoreChecker.getSource;
 String source = "";
 switch(installationSource){
         case Source.IS_INSTALLED_FROM_PLAY_STORE:
+          // Installed from Play Store
           source = "Play Store";
           break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
-          source = "Local Source";  //For example: Installed apk using adb commands, side loading or cloud
+          // Installed using adb commands or side loading or any cloud service
+          source = "Local Source";
           break;
-        case Source.IS_INSTALLED_FROM_OTHER_STORE:
-          source = "Other Store";  //For example: Amazon app store
+        case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:
+          // Installed from Amazon app store
+          source = "Amazon Store";
+          break;
+        case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
+          // Installed from other market store
+          source = "Other Source";
           break;
         case Source.IS_INSTALLED_FROM_APP_STORE:
+          // Installed from app store
           source = "App Store";
           break;
         case Source.IS_INSTALLED_FROM_TEST_FLIGHT:
+          // Installed from Test Flight
           source = "Test Flight";
           break;
         case Source.UNKNOWN:
-          source = "Unknown source";
+          // Installed from Unknown source
+          source = "Unknown Source";
           break;
       }
 ```
