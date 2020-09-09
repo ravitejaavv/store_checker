@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - store_checker (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - store_checker (from `.symlinks/plugins/store_checker/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  store_checker:
+    :path: ".symlinks/plugins/store_checker/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.0.beta.2
