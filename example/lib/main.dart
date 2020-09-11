@@ -40,13 +40,13 @@ class _MyAppState extends State<MyApp> {
 
     // Set source text state
     setState(() {
-      switch(installationSource){
+      switch (installationSource) {
         case Source.IS_INSTALLED_FROM_PLAY_STORE:
           // Installed from Play Store
           source = "Play Store";
           break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
-        // Installed using adb commands or side loading or any cloud service
+          // Installed using adb commands or side loading or any cloud service
           source = "Local Source";
           break;
         case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:

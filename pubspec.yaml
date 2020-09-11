@@ -1,6 +1,6 @@
 name: store_checker
-description: This Flutter plugin is useful to find the origin of currently installed apk/ipa.
-version: 0.0.3
+description: This flutter plugin is useful to find the origin of currently installed apk/ipa.
+version: 0.0.4
 homepage: https://github.com/ravitejaavv/store_checker
 
 environment:
