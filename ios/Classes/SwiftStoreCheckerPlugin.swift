@@ -14,7 +14,7 @@ public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
     // Find the origin of installed app 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let isTestFlight = isRunningInTestFlightEnvironment();
-        let isAppStore = isAppStoreReceiptSandbox();
+        let isAppStore = isRunningInAppStoreEnvironment();
         if isTestFlight{
             // Installed from Test Flight
             result("TestFlight")

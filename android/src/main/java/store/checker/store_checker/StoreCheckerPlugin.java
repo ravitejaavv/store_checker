@@ -15,10 +15,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** StoreCheckerPlugin is a android class to find the orign of installed apk */
 public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
-  /// The MethodChannel that will the communication between Flutter and native Android
-  ///
-  /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-  /// when the Flutter Engine is detached from the Activity
+  // MethodChannel is used to provide communication between Flutter and native Android
   private MethodChannel channel;
   private Context applicationContext;
 
@@ -29,11 +26,7 @@ public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(this);
   }
 
-  // This static function is optional and equivalent to onAttachedToEngine.
-  // It is encouraged to share logic between onAttachedToEngine and registerWith to keep
-  // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
-  // depending on the user's project. onAttachedToEngine or registerWith must both be defined
-  // in the same class.
+  // static function onAttachedToEngine or registerWith will be called depending on the user's project
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "store_checker");
     channel.setMethodCallHandler(new StoreCheckerPlugin());
@@ -52,6 +45,7 @@ public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
     }
   }
 
+  // onDetachedFromEngine will be used to disconnect the binding between channels
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
