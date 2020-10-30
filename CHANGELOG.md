@@ -1,3 +1,6 @@
+## 0.0.6
+* Removed unused files
+* Code format
 ## 0.0.5
 * App Store detection fix
 ## 0.0.4
