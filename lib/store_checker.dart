@@ -20,7 +20,7 @@ class StoreChecker {
 
   /* Get origin of installed apk/ipa */
   static Future<Source> get getSource async {
-    final String sourceName = await _channel.invokeMethod('getSource');
+    final String? sourceName = await _channel.invokeMethod('getSource');
     if (Platform.isAndroid) {
       if (sourceName == null) {
         // Installed apk using adb commands or side loading or downloaded from any cloud service
@@ -36,7 +36,11 @@ class StoreChecker {
         return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
       }
     } else if (Platform.isIOS) {
-      if (sourceName.isEmpty) {
+      if (sourceName == null) {
+        // Unknown source when null on iOS
+        return Source.UNKNOWN;
+      }
+      else if (sourceName.isEmpty) {
         // Downloaded ipa using cloud service and installed
         return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
       } else if (sourceName.compareTo('AppStore') == 0) {
