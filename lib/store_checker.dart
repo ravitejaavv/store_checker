@@ -39,8 +39,7 @@ class StoreChecker {
       if (sourceName == null) {
         // Unknown source when null on iOS
         return Source.UNKNOWN;
-      }
-      else if (sourceName.isEmpty) {
+      } else if (sourceName.isEmpty) {
         // Downloaded ipa using cloud service and installed
         return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
       } else if (sourceName.compareTo('AppStore') == 0) {

@@ -1,3 +1,5 @@
+## 0.1.0
+* Migrate to null safety
 ## 0.0.6
 * Removed unused files
 * Code format
