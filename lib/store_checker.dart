@@ -10,7 +10,7 @@ enum Source {
   IS_INSTALLED_FROM_AMAZON_APP_STORE,
   IS_INSTALLED_FROM_HUAWEI_APP_GALLERY,
   IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE,
-  IS_INSTALLED_FROM_OPPO_MARKET,
+  IS_INSTALLED_FROM_OPPO_APP_MARKET,
   IS_INSTALLED_FROM_XIAOMI_GET_APPS,
   IS_INSTALLED_FROM_VIVO_APP_STORE,
   IS_INSTALLED_FROM_GOOGLE_DRIVE,
@@ -45,7 +45,7 @@ class StoreChecker {
         return Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE;
       }  else if (sourceName.compareTo('com.oppo.market') == 0) {
         // Installed apk from Amazon App Store
-        return Source.IS_INSTALLED_FROM_OPPO_MARKET;
+        return Source.IS_INSTALLED_FROM_OPPO_APP_MARKET;
       }  else if (sourceName.compareTo('com.xiaomi.mipicks') == 0) {
         // Installed apk from Amazon App Store
         return Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS;
