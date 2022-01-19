@@ -73,10 +73,6 @@ class _MyAppState extends State<MyApp> {
           // Installed from Amazon app store
           source = "Vivo App Store";
           break;
-        case Source.IS_INSTALLED_FROM_GOOGLE_DRIVE:
-          // Installed from Amazon app store
-          source = "Google Drive";
-          break;
         case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
           // Installed from other market store
           source = "Other Source";
