@@ -18,7 +18,7 @@ import 'package:store_checker/store_checker.dart';
 Source installationSource = await StoreChecker.getSource;
 
 String source = "";
-switch(installationSource){
+switch (installationSource) {
         case Source.IS_INSTALLED_FROM_PLAY_STORE:
           // Installed from Play Store
           source = "Play Store";
@@ -30,6 +30,30 @@ switch(installationSource){
         case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:
           // Installed from Amazon app store
           source = "Amazon Store";
+          break;
+        case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
+          // Installed from Amazon app store
+          source = "Huawei App Gallery";
+          break;
+        case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
+          // Installed from Amazon app store
+          source = "Samsung Galaxy Store";
+          break;
+        case Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS:
+          // Installed from Amazon app store
+          source = "Xiaomi Get Apps";
+          break;
+        case Source.IS_INSTALLED_FROM_OPPO_APP_MARKET:
+          // Installed from Amazon app store
+          source = "Oppo App Market";
+          break;
+        case Source.IS_INSTALLED_FROM_VIVO_APP_STORE:
+          // Installed from Amazon app store
+          source = "Vivo App Store";
+          break;
+        case Source.IS_INSTALLED_FROM_GOOGLE_DRIVE:
+          // Installed from Amazon app store
+          source = "Google Drive";
           break;
         case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
           // Installed from other market store
