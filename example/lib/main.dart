@@ -53,6 +53,26 @@ class _MyAppState extends State<MyApp> {
           // Installed from Amazon app store
           source = "Amazon Store";
           break;
+        case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
+          // Installed from Amazon app store
+          source = "Huawei App Gallery";
+          break;
+        case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
+          // Installed from Amazon app store
+          source = "Samsung Galaxy Store";
+          break;
+        case Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS:
+          // Installed from Amazon app store
+          source = "Xiaomi Get Apps";
+          break;
+        case Source.IS_INSTALLED_FROM_OPPO_APP_MARKET:
+          // Installed from Amazon app store
+          source = "Oppo App Market";
+          break;
+        case Source.IS_INSTALLED_FROM_VIVO_APP_STORE:
+          // Installed from Amazon app store
+          source = "Vivo App Store";
+          break;
         case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
           // Installed from other market store
           source = "Other Source";

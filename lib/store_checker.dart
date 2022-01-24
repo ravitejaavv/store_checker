@@ -8,6 +8,11 @@ enum Source {
   IS_INSTALLED_FROM_PLAY_STORE,
   IS_INSTALLED_FROM_LOCAL_SOURCE,
   IS_INSTALLED_FROM_AMAZON_APP_STORE,
+  IS_INSTALLED_FROM_HUAWEI_APP_GALLERY,
+  IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE,
+  IS_INSTALLED_FROM_OPPO_APP_MARKET,
+  IS_INSTALLED_FROM_XIAOMI_GET_APPS,
+  IS_INSTALLED_FROM_VIVO_APP_STORE,
   IS_INSTALLED_FROM_OTHER_SOURCE,
   IS_INSTALLED_FROM_APP_STORE,
   IS_INSTALLED_FROM_TEST_FLIGHT,
@@ -31,7 +36,22 @@ class StoreChecker {
       } else if (sourceName.compareTo('com.amazon.venezia') == 0) {
         // Installed apk from Amazon App Store
         return Source.IS_INSTALLED_FROM_AMAZON_APP_STORE;
-      } else {
+      }  else if (sourceName.compareTo('com.huawei.appmarket') == 0) {
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY;
+      }  else if (sourceName.compareTo('com.sec.android.app.samsungapps') == 0) {
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE;
+      }  else if (sourceName.compareTo('com.oppo.market') == 0) {
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_OPPO_APP_MARKET;
+      }  else if (sourceName.compareTo('com.xiaomi.mipicks') == 0) {
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS;
+      }  else if (sourceName.compareTo('com.vivo.appstore') == 0) {
+        // Installed apk from Amazon App Store
+        return Source.IS_INSTALLED_FROM_VIVO_APP_STORE;
+      }  else {
         // Installed apk from Amazon app store or other markets
         return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
       }
