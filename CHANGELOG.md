@@ -1,3 +1,5 @@
+## 1.0.0
+* Added Huawei, Samsung, Oppo, Xiaomi & Vivo app stores detection
 ## 0.1.0
 * Migrate to null safety
 ## 0.0.6
