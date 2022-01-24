@@ -54,23 +54,23 @@ class _MyAppState extends State<MyApp> {
           source = "Amazon Store";
           break;
         case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
-          // Installed from Amazon app store
+          // Installed from Huawei app store
           source = "Huawei App Gallery";
           break;
         case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
-          // Installed from Amazon app store
+          // Installed from Samsung app store
           source = "Samsung Galaxy Store";
           break;
         case Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS:
-          // Installed from Amazon app store
+          // Installed from Xiaomi app store
           source = "Xiaomi Get Apps";
           break;
         case Source.IS_INSTALLED_FROM_OPPO_APP_MARKET:
-          // Installed from Amazon app store
+          // Installed from Oppo app store
           source = "Oppo App Market";
           break;
         case Source.IS_INSTALLED_FROM_VIVO_APP_STORE:
-          // Installed from Amazon app store
+          // Installed from Vivo app store
           source = "Vivo App Store";
           break;
         case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
           source = "Other Source";
           break;
         case Source.IS_INSTALLED_FROM_APP_STORE:
-          // Installed from app store
+          // Installed from iOS app store
           source = "App Store";
           break;
         case Source.IS_INSTALLED_FROM_TEST_FLIGHT:
