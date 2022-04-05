@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 /* Source is where apk/ipa is available to Download */
 enum Source {
   PLAY_STORE,
+  CAFE_BAZAAR,
   LOCAL_SOURCE,
   AMAZON_APP_STORE,
   HUAWEI_APP_GALLERY,
@@ -15,7 +16,6 @@ enum Source {
   VIVO_APP_STORE,
   APP_STORE,
   TEST_FLIGHT,
-  CAFE_BAZAAR,
   OTHER_SOURCE,
   UNKNOWN
 }
