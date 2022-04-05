@@ -23,7 +23,7 @@ switch (installationSource) {
           // Installed from Play Store
           source = "Play Store";
           break;
-        case Source.PLAY_STORE:
+        case Source.CAFE_BAZAAR:
           // Installed from Play Store
           source = "Cafe Bazaar";
           break;

@@ -39,6 +39,9 @@ class StoreChecker {
       } else if (sourceName.compareTo('com.android.vending') == 0) {
         // Installed apk from Google Play Store
         return Source.PLAY_STORE;
+      } else if (sourceName.compareTo('com.farsitel.bazaar') == 0) {
+        // Installed apk from Vivo App Store
+        return Source.CAFE_BAZAAR;
       } else if (sourceName.compareTo('com.amazon.venezia') == 0) {
         // Installed apk from Amazon App Store
         return Source.AMAZON_APP_STORE;
@@ -57,9 +60,6 @@ class StoreChecker {
       } else if (sourceName.compareTo('com.vivo.appstore') == 0) {
         // Installed apk from Vivo App Store
         return Source.VIVO_APP_STORE;
-      } else if (sourceName.compareTo('com.farsitel.bazaar') == 0) {
-        // Installed apk from Vivo App Store
-        return Source.CAFE_BAZAAR;
       } else {
         // Installed apk from Amazon app store or other markets
         return Source.OTHER_SOURCE;
