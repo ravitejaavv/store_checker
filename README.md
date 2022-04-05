@@ -15,51 +15,55 @@ dependencies:
 ```dart
 import 'package:store_checker/store_checker.dart';
 
-Source installationSource = await StoreChecker.getSource;
+Source installationSource = await StoreChecker.source;
 
 String source = "";
 switch (installationSource) {
-        case Source.IS_INSTALLED_FROM_PLAY_STORE:
+        case Source.PLAY_STORE:
           // Installed from Play Store
           source = "Play Store";
           break;
-        case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
+        case Source.PLAY_STORE:
+          // Installed from Play Store
+          source = "Cafe Bazaar";
+          break;
+        case Source.LOCAL_SOURCE:
           // Installed using adb commands or side loading or any cloud service
           source = "Local Source";
           break;
-        case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:
+        case Source.AMAZON_APP_STORE:
           // Installed from Amazon app store
           source = "Amazon Store";
           break;
-        case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
+        case Source.HUAWEI_APP_GALLERY:
           // Installed from Huawei app store
           source = "Huawei App Gallery";
           break;
-        case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
+        case Source.SAMSUNG_GALAXY_STORE:
           // Installed from Samsung app store
           source = "Samsung Galaxy Store";
           break;
-        case Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS:
+        case Source.XIAOMI_GET_APPS:
           // Installed from Xiaomi app store
           source = "Xiaomi Get Apps";
           break;
-        case Source.IS_INSTALLED_FROM_OPPO_APP_MARKET:
+        case Source.OPPO_APP_MARKET:
           // Installed from Oppo app store
           source = "Oppo App Market";
           break;
-        case Source.IS_INSTALLED_FROM_VIVO_APP_STORE:
+        case Source.VIVO_APP_STORE:
           // Installed from Vivo app store
           source = "Vivo App Store";
           break;
-        case Source.IS_INSTALLED_FROM_OTHER_SOURCE:
+        case Source.OTHER_SOURCE:
           // Installed from other market store
           source = "Other Source";
           break;
-        case Source.IS_INSTALLED_FROM_APP_STORE:
+        case Source.APP_STORE:
           // Installed from app store
           source = "App Store";
           break;
-        case Source.IS_INSTALLED_FROM_TEST_FLIGHT:
+        case Source.TEST_FLIGHT:
           // Installed from Test Flight
           source = "Test Flight";
           break;
@@ -69,6 +73,8 @@ switch (installationSource) {
           break;
       }
 ```
+
+You can also use `sourceName` to get source package name in Android and source name in iOS.
 
 ## Issues and feedback
 
