@@ -1,3 +1,8 @@
+## 1.1.0
+* Add CafeBazaar
+* Add `sourceName` getter
+* [BREAKING CHANGE]  Rename `getSource` to `source`
+* [BREAKING CHANGE]  Rename sources and remove `IS_INSTALLED_FROM` prefix
 ## 1.0.0
 * Added Huawei, Samsung, Oppo, Xiaomi & Vivo app stores detection
 ## 0.1.0

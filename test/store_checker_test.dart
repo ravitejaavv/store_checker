@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getSource', () async {
-    expect(await StoreChecker.getSource, Source.IS_INSTALLED_FROM_PLAY_STORE);
+    expect(await StoreChecker.source, Source.IS_INSTALLED_FROM_PLAY_STORE);
   });
 }
