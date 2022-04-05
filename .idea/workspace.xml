@@ -61,6 +61,7 @@
     <configuration name="getSource" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="getSource" />
       <option name="testFile" value="$PROJECT_DIR$/test/store_checker_test.dart" />
+      <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>

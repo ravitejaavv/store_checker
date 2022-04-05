@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       //get origin of installed application
-      installationSource = await StoreChecker.getSource;
+      installationSource = await StoreChecker.source;
     } on PlatformException {
       installationSource = Source.UNKNOWN;
     }

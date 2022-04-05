@@ -5,17 +5,18 @@ import 'package:flutter/services.dart';
 
 /* Source is where apk/ipa is available to Download */
 enum Source {
-  IS_INSTALLED_FROM_PLAY_STORE,
-  IS_INSTALLED_FROM_LOCAL_SOURCE,
-  IS_INSTALLED_FROM_AMAZON_APP_STORE,
-  IS_INSTALLED_FROM_HUAWEI_APP_GALLERY,
-  IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE,
-  IS_INSTALLED_FROM_OPPO_APP_MARKET,
-  IS_INSTALLED_FROM_XIAOMI_GET_APPS,
-  IS_INSTALLED_FROM_VIVO_APP_STORE,
-  IS_INSTALLED_FROM_OTHER_SOURCE,
-  IS_INSTALLED_FROM_APP_STORE,
-  IS_INSTALLED_FROM_TEST_FLIGHT,
+  PLAY_STORE,
+  LOCAL_SOURCE,
+  AMAZON_APP_STORE,
+  HUAWEI_APP_GALLERY,
+  SAMSUNG_GALAXY_STORE,
+  OPPO_APP_MARKET,
+  XIAOMI_GET_APPS,
+  VIVO_APP_STORE,
+  APP_STORE,
+  TEST_FLIGHT,
+  CAFE_BAZAAR,
+  OTHER_SOURCE,
   UNKNOWN
 }
 
@@ -23,37 +24,45 @@ enum Source {
 class StoreChecker {
   static const MethodChannel _channel = const MethodChannel('store_checker');
 
+  static Future<String?> get sourceName async {
+    return await _channel.invokeMethod('getSource');
+  }
+
   /* Get origin of installed apk/ipa */
-  static Future<Source> get getSource async {
-    final String? sourceName = await _channel.invokeMethod('getSource');
+  static Future<Source> get source async {
+    final String? sourceName = await StoreChecker.sourceName;
+
     if (Platform.isAndroid) {
       if (sourceName == null) {
         // Installed apk using adb commands or side loading or downloaded from any cloud service
-        return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
+        return Source.LOCAL_SOURCE;
       } else if (sourceName.compareTo('com.android.vending') == 0) {
         // Installed apk from Google Play Store
-        return Source.IS_INSTALLED_FROM_PLAY_STORE;
+        return Source.PLAY_STORE;
       } else if (sourceName.compareTo('com.amazon.venezia') == 0) {
         // Installed apk from Amazon App Store
-        return Source.IS_INSTALLED_FROM_AMAZON_APP_STORE;
+        return Source.AMAZON_APP_STORE;
       } else if (sourceName.compareTo('com.huawei.appmarket') == 0) {
         // Installed apk from Huawei App Store
-        return Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY;
+        return Source.HUAWEI_APP_GALLERY;
       } else if (sourceName.compareTo('com.sec.android.app.samsungapps') == 0) {
         // Installed apk from Samsung App Store
-        return Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE;
+        return Source.SAMSUNG_GALAXY_STORE;
       } else if (sourceName.compareTo('com.oppo.market') == 0) {
         // Installed apk from Oppo App Store
-        return Source.IS_INSTALLED_FROM_OPPO_APP_MARKET;
+        return Source.OPPO_APP_MARKET;
       } else if (sourceName.compareTo('com.xiaomi.mipicks') == 0) {
         // Installed apk from Xiaomi App Store
-        return Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS;
+        return Source.XIAOMI_GET_APPS;
       } else if (sourceName.compareTo('com.vivo.appstore') == 0) {
         // Installed apk from Vivo App Store
-        return Source.IS_INSTALLED_FROM_VIVO_APP_STORE;
+        return Source.VIVO_APP_STORE;
+      } else if (sourceName.compareTo('com.farsitel.bazaar') == 0) {
+        // Installed apk from Vivo App Store
+        return Source.CAFE_BAZAAR;
       } else {
         // Installed apk from Amazon app store or other markets
-        return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
+        return Source.OTHER_SOURCE;
       }
     } else if (Platform.isIOS) {
       if (sourceName == null) {
@@ -61,13 +70,13 @@ class StoreChecker {
         return Source.UNKNOWN;
       } else if (sourceName.isEmpty) {
         // Downloaded ipa using cloud service and installed
-        return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
+        return Source.LOCAL_SOURCE;
       } else if (sourceName.compareTo('AppStore') == 0) {
         // Installed ipa from App Store
-        return Source.IS_INSTALLED_FROM_APP_STORE;
+        return Source.APP_STORE;
       } else {
         // Installed ipa from Test Flight
-        return Source.IS_INSTALLED_FROM_TEST_FLIGHT;
+        return Source.TEST_FLIGHT;
       }
     }
     // Installed from Unknown source
