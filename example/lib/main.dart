@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
           source = "Amazon Appstore";
           break;
         case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
-          // Installed from Huawei app atore
+          // Installed from Huawei app store
           source = "Huawei App Gallery";
           break;
         case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
