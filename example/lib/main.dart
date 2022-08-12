@@ -41,20 +41,20 @@ class _MyAppState extends State<MyApp> {
     // Set source text state
     setState(() {
       switch (installationSource) {
-        case Source.IS_INSTALLED_FROM_PLAY_STORE:
-          // Installed from Play Store
-          source = "Play Store";
+        case Source.IS_INSTALLED_FROM_GOOGLE_PLAY_STORE:
+          // Installed from Google Play Store
+          source = "Google Play Store";
           break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
           // Installed using adb commands or side loading or any cloud service
           source = "Local Source";
           break;
-        case Source.IS_INSTALLED_FROM_AMAZON_APP_STORE:
+        case Source.IS_INSTALLED_FROM_AMAZON_APPSTORE:
           // Installed from Amazon app store
-          source = "Amazon Store";
+          source = "Amazon Appstore";
           break;
         case Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY:
-          // Installed from Huawei app store
+          // Installed from Huawei app atore
           source = "Huawei App Gallery";
           break;
         case Source.IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE:
@@ -77,9 +77,9 @@ class _MyAppState extends State<MyApp> {
           // Installed from other market store
           source = "Other Source";
           break;
-        case Source.IS_INSTALLED_FROM_APP_STORE:
-          // Installed from iOS app store
-          source = "App Store";
+        case Source.IS_INSTALLED_FROM_APPLE_APP_STORE:
+          // Installed from Apple app store
+          source = "Apple App Store";
           break;
         case Source.IS_INSTALLED_FROM_TEST_FLIGHT:
           // Installed from Test Flight
