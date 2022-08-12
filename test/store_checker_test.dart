@@ -9,7 +9,7 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return Source.IS_INSTALLED_FROM_PLAY_STORE;
+      return Source.IS_INSTALLED_FROM_GOOGLE_PLAY_STORE;
     });
   });
 
@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getSource', () async {
-    expect(await StoreChecker.getSource, Source.IS_INSTALLED_FROM_PLAY_STORE);
+    expect(await StoreChecker.getSource, Source.IS_INSTALLED_FROM_GOOGLE_PLAY_STORE);
   });
 }
