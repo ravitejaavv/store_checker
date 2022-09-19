@@ -61,6 +61,10 @@ class _MyAppState extends State<MyApp> {
           // Installed from Samsung app store
           source = "Samsung Galaxy Store";
           break;
+        case Source.IS_INSTALLED_FROM_SAMSUNG_SMART_SWITCH_MOBILE:
+          // Installed from Samsung Smart Switch Mobile
+          source = "Samsung Smart Switch Mobile";
+          break;
         case Source.IS_INSTALLED_FROM_XIAOMI_GET_APPS:
           // Installed from Xiaomi app store
           source = "Xiaomi Get Apps";

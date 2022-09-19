@@ -1,3 +1,5 @@
+## 1.1.0
+* Added Samsung Smart Switch Mobile detection
 ## 1.0.0
 * Added Huawei, Samsung, Oppo, Xiaomi & Vivo app stores detection
 ## 0.1.0
