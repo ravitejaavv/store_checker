@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 
 /* Source is where apk/ipa is available to Download */
 enum Source {
-  IS_INSTALLED_FROM_PLAY_STORE,
+  IS_INSTALLED_FROM_GOOGLE_PLAY_STORE,
   IS_INSTALLED_FROM_LOCAL_SOURCE,
-  IS_INSTALLED_FROM_AMAZON_APP_STORE,
+  IS_INSTALLED_FROM_AMAZON_APPSTORE,
   IS_INSTALLED_FROM_HUAWEI_APP_GALLERY,
   IS_INSTALLED_FROM_SAMSUNG_GALAXY_STORE,
   IS_INSTALLED_FROM_SAMSUNG_SMART_SWITCH_MOBILE,
@@ -15,7 +15,7 @@ enum Source {
   IS_INSTALLED_FROM_XIAOMI_GET_APPS,
   IS_INSTALLED_FROM_VIVO_APP_STORE,
   IS_INSTALLED_FROM_OTHER_SOURCE,
-  IS_INSTALLED_FROM_APP_STORE,
+  IS_INSTALLED_FROM_APPLE_APP_STORE,
   IS_INSTALLED_FROM_TEST_FLIGHT,
   UNKNOWN
 }
@@ -33,10 +33,10 @@ class StoreChecker {
         return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
       } else if (sourceName.compareTo('com.android.vending') == 0) {
         // Installed apk from Google Play Store
-        return Source.IS_INSTALLED_FROM_PLAY_STORE;
+        return Source.IS_INSTALLED_FROM_GOOGLE_PLAY_STORE;
       } else if (sourceName.compareTo('com.amazon.venezia') == 0) {
         // Installed apk from Amazon App Store
-        return Source.IS_INSTALLED_FROM_AMAZON_APP_STORE;
+        return Source.IS_INSTALLED_FROM_AMAZON_APPSTORE;
       } else if (sourceName.compareTo('com.huawei.appmarket') == 0) {
         // Installed apk from Huawei App Store
         return Source.IS_INSTALLED_FROM_HUAWEI_APP_GALLERY;
@@ -68,7 +68,7 @@ class StoreChecker {
         return Source.IS_INSTALLED_FROM_LOCAL_SOURCE;
       } else if (sourceName.compareTo('AppStore') == 0) {
         // Installed ipa from App Store
-        return Source.IS_INSTALLED_FROM_APP_STORE;
+        return Source.IS_INSTALLED_FROM_APPLE_APP_STORE;
       } else {
         // Installed ipa from Test Flight
         return Source.IS_INSTALLED_FROM_TEST_FLIGHT;
