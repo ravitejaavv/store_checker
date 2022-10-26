@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 /* Source is where apk/ipa is available to Download */
 enum Source {
   IS_INSTALLED_FROM_PLAY_STORE,
+  IS_INSTALLED_FROM_PLAY_PACKAGE_INSTALLER,
   IS_INSTALLED_FROM_LOCAL_SOURCE,
   IS_INSTALLED_FROM_AMAZON_APP_STORE,
   IS_INSTALLED_FROM_HUAWEI_APP_GALLERY,
@@ -34,6 +35,10 @@ class StoreChecker {
       } else if (sourceName.compareTo('com.android.vending') == 0) {
         // Installed apk from Google Play Store
         return Source.IS_INSTALLED_FROM_PLAY_STORE;
+      } else if (sourceName.compareTo('com.google.android.packageinstaller') ==
+          0) {
+        // Installed apk from Google Package installer/ firebase app tester
+        return Source.IS_INSTALLED_FROM_PLAY_PACKAGE_INSTALLER;
       } else if (sourceName.compareTo('com.amazon.venezia') == 0) {
         // Installed apk from Amazon App Store
         return Source.IS_INSTALLED_FROM_AMAZON_APP_STORE;
