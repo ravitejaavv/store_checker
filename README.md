@@ -23,6 +23,10 @@ switch (installationSource) {
           // Installed from Play Store
           source = "Play Store";
           break;
+        case Source.IS_INSTALLED_FROM_PLAY_PACKAGE_INSTALLER:
+          // Installed from Google Package installer
+          source = "Google Package installer";
+          break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
           // Installed using adb commands or side loading or any cloud service
           source = "Local Source";
