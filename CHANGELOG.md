@@ -1,3 +1,5 @@
+## 1.1.1
+* Migrate jCenter to mavenCentral
 ## 1.1.0
 * Added Samsung Smart Switch Mobile detection
 ## 1.0.0
