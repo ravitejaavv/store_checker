@@ -1,3 +1,5 @@
+## 1.2.0
+* Added Google Package Installer detection
 ## 1.1.0
 * Added Samsung Smart Switch Mobile detection
 ## 1.0.0
