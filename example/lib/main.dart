@@ -49,6 +49,10 @@ class _MyAppState extends State<MyApp> {
           // Installed apk from Google Package installer/ firebase app tester
           source = "Google Package installer";
           break;
+        case Source.IS_INSTALLED_FROM_RU_STORE:
+          // Installed apk from RuStore
+          source = "RuStore";
+          break;
         case Source.IS_INSTALLED_FROM_LOCAL_SOURCE:
           // Installed using adb commands or side loading or any cloud service
           source = "Local Source";
