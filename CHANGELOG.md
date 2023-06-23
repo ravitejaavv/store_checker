@@ -1,3 +1,6 @@
+## 1.3.0
+* Added RuStore detection
+* Migrate jCenter to mavenCentral
 ## 1.2.0
 * Added Google Package Installer detection
 ## 1.1.0
