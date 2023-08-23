@@ -1,3 +1,6 @@
+## 1.4.0
+Bug fix: Simulator detection
+https://github.com/ravitejaavv/store_checker/issues/19
 ## 1.3.0
 * Added RuStore detection
 * Migrate jCenter to mavenCentral

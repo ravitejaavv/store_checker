@@ -78,7 +78,8 @@ public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
     // Check current app is running on simulator or not
     private func isSimulator() -> Bool {
         //Check architecture
-        #if arch(i386) || arch(x86_64) || arch(arm64)
+        //#if arch(i386) || arch(x86_64) || arch(arm64)
+        #if targetEnvironment(simulator) // this code is correct
         return true
         #else
         return false
