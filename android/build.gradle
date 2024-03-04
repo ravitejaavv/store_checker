@@ -24,10 +24,16 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace "store.checker.store_checker"
     compileSdkVersion 28
-
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
+         if (project.android.hasProperty('namespace')) {
+        namespace 'store.checker.store_checker'
+    }
     }
     lintOptions {
         disable 'InvalidPackage'
