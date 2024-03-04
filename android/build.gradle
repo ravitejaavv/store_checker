@@ -24,6 +24,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace "store.checker.store_checker"
     compileSdkVersion 28
     kotlinOptions {
         jvmTarget = '1.8'
