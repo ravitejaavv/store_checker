@@ -1,3 +1,5 @@
+## 1.5.0
+AGP 8 support
 ## 1.4.0
 Bug fix: Simulator detection
 https://github.com/ravitejaavv/store_checker/issues/19
