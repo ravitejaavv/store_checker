@@ -68,7 +68,7 @@ class StoreChecker {
         // Installed apk from Amazon app store or other markets
         return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
       }
-    } else if (Platform.isIOS) {
+    } else if (Platform.isIOS || Platform.isMacOS) {
       if (sourceName == null) {
         // Unknown source when null on iOS
         return Source.UNKNOWN;

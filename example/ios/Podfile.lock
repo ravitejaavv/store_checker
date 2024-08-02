@@ -14,9 +14,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/store_checker/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  store_checker: a7be624ac44a4ba88e7917e71afe8433f197161e
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.15.2
