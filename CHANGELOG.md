@@ -1,3 +1,5 @@
+## 1.6.0
+macos support
 ## 1.5.0
 AGP 8 support
 ## 1.4.0
