@@ -28,7 +28,7 @@ android {
         namespace 'store.checker.store_checker'
     }
 
-    compileSdkVersion 28
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 16
