@@ -10,7 +10,7 @@ This Flutter plugin is useful to find the origin of currently installed apk/ipa.
 You can use the StoreChecker to find the origin of apk/ipa. This works both on iOS and Android.
 Add this to your package's pubspec.yaml file:
 dependencies:
-  store_checker: ^1.6.0
+  store_checker: ^1.7.0
 
 ```dart
 import 'package:store_checker/store_checker.dart';
