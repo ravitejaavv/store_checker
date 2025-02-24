@@ -11,7 +11,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** StoreCheckerPlugin is a android class to find the orign of installed apk */
 public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
@@ -24,12 +23,6 @@ public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
     this.applicationContext = flutterPluginBinding.getApplicationContext();
     channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "store_checker");
     channel.setMethodCallHandler(this);
-  }
-
-  // static function onAttachedToEngine or registerWith will be called depending on the user's project
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "store_checker");
-    channel.setMethodCallHandler(new StoreCheckerPlugin());
   }
 
   //This function is used to get the installer package name of current application
