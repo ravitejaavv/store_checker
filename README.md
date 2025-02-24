@@ -6,8 +6,10 @@ This Flutter plugin is useful to find the origin of currently installed apk/ipa.
 
 **iOS**: Detects whether app is installed from TestFlight Beta or App Store build
 
+**macOS**: Detects whether app is installed from TestFlight Beta, App Store build, or locally
+
 # Usage
-You can use the StoreChecker to find the origin of apk/ipa. This works both on iOS and Android.
+You can use the StoreChecker to find the origin of apk/ipa. This works on iOS, macOS and Android.
 Add this to your package's pubspec.yaml file:
 dependencies:
   store_checker: ^1.7.0
