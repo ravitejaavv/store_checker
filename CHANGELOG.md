@@ -1,3 +1,5 @@
+## 1.8.0
+Android gradle fixes
 ## 1.7.0
 flutter 3.29.0 support
 ## 1.6.0
