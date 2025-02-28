@@ -2,6 +2,8 @@ package store.checker.store_checker;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.pm.InstallSourceInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -25,14 +27,27 @@ public class StoreCheckerPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(this);
   }
 
-  //This function is used to get the installer package name of current application
-  @TargetApi(Build.VERSION_CODES.ECLAIR)
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    // Check call methos
+    // Check call method
     if (call.method.equals("getSource")) {
-      // get the installer package name
-      result.success(applicationContext.getPackageManager().getInstallerPackageName(applicationContext.getPackageName()));
+      try {
+        String packageName = applicationContext.getPackageName();
+        String installerPackageName;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+          // For Android 11 (API level 30) and above
+          InstallSourceInfo info = applicationContext.getPackageManager().getInstallSourceInfo(packageName);
+          installerPackageName = info.getInstallingPackageName();
+        } else {
+          // For versions below Android 11
+          installerPackageName = applicationContext.getPackageManager().getInstallerPackageName(packageName);
+        }
+
+        result.success(installerPackageName);
+      } catch (Exception e) {
+        result.error("ERROR", "Failed to get installer source: " + e.getMessage(), null);
+      }
     } else {
       result.notImplemented();
     }
